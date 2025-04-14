@@ -114,7 +114,22 @@
   - 15.3. Mitigation Strategies and Best Practices  
   - 15.4. Ethical and Legal Considerations  
 ---
+16. Bit-Level Differences: 23, 23, 26, 30 Explained
+    16.1. Mathematical Derivations of Keyspace  
+    16.2. Comparison of 22/23/26/30-bit Keys  
+    16.3. Impact on Brute-Force Resistance and Security
+---
+17. Key Sizes & Format Variations
+    17.1. Overview of Physical vs. Digital Key Formats  
+    17.2. Encoding, Checksum, and Conversion Methods  
+    17.3. Diagrammatic Representations of Key Structure
+---
+18. Probability & Chance Calculations
+    18.1. Statistical Models for Key Generation  
+    18.2. Monte Carlo Simulations and Key Collision Analysis  
+    18.3. Impact of Randomness and Entropy on Security
 
+---
 
 ## 1. Introduction and Background
 
