@@ -1702,38 +1702,35 @@ These pie charts now show how much of the full **Base62** keyspace is **valid Ba
 
 ## **Mermaid Pie Charts (Base58 Valid inside Base62 Universe)**
 
+---
 
 ```mermaid
 pie
     title Base58 Valid Keys vs Base62 Space (22-char)
-    "Valid Base58 Keys (≈ 6.2e+37)": 6.2
-    "Invalid Non-Base58 Keys": 3093.8
+    "Valid Base58 Keys (≈ 2%)": 2
+    "Invalid Non-Base58 Keys": 98
 ```
 ---
-
 ```mermaid
 pie
     title Base58 Valid Keys vs Base62 Space (23-char)
-    "Valid Base58 Keys (≈ 3.6e+39)": 3.6
-    "Invalid Non-Base58 Keys": 189996.4
+    "Valid Base58 Keys (≈ 1.89%)": 1.89
+    "Invalid Non-Base58 Keys": 98.11
 ```
 ---
-
 ```mermaid
 pie
     title Base58 Valid Keys vs Base62 Space (26-char)
-    "Valid Base58 Keys (≈ 1.5e+44)": 15
-    "Invalid Non-Base58 Keys": 1199985
+    "Valid Base58 Keys (≈ 1.25%)": 1.25
+    "Invalid Non-Base58 Keys": 98.75
 ```
 ---
-
 ```mermaid
 pie
     title Base58 Valid Keys vs Base62 Space (30-char)
-    "Valid Base58 Keys (≈ 5.8e+50)": 58
-    "Invalid Non-Base58 Keys": 979999942
+    "Valid Base58 Keys (≈ 0.59%)": 0.59
+    "Invalid Non-Base58 Keys": 99.41
 ```
-
 ---
 
 Each chart scales the numbers down to **millions**, **billions**, or simplified units, but still represents the **proportional ratio** of:
