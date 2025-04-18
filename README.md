@@ -5,201 +5,236 @@
 ## Table of Contents
 
 1. [Introduction and Background](#introduction-and-background)  
-
    1.1. [Project Vision](#11-project-vision)  
    1.2. [Scope and Audience](#12-scope-and-audience)  
    1.3. [Conceptual Overview](#13-conceptual-overview)  
    1.4. [Historical Context and References](#14-historical-context-and-references)  
    1.5. [Deep Dive: The Creator’s Logic, Background, and Motivation](#15-deep-dive-the-creators-logic-background-and-motivation)  
----
-2. [Casascius Physical Bitcoins and Their Legacy](#casascius-physical-bitcoins-and-their-legacy)  
 
-    2.1. [Physical Manifestation of Digital Wealth](#21-physical-manifestation-of-digital-wealth)  
+---
+
+2. [Casascius Physical Bitcoins and Their Legacy](#casascius-physical-bitcoins-and-their-legacy)  
+   2.1. [Physical Manifestation of Digital Wealth](#21-physical-manifestation-of-digital-wealth)  
    2.2. [Advanced Tamper-Evident Security](#22-advanced-tamper-evident-security)  
    2.3. [Innovative Cryptographic Techniques](#23-innovative-cryptographic-techniques)  
    2.4. [Community Engagement and Ideological Impact](#24-community-engagement-and-ideological-impact)  
    2.5. [Legacy, Collectibility, and Regulatory Impact](#25-legacy-collectibility-and-regulatory-impact)  
+
 ---
+
 3. [Overview and Features](#overview-and-features)  
- 
    3.1. [Modular Architecture](#31-modular-architecture)  
    3.2. [Scalability and Extensibility](#32-scalability-and-extensibility)  
-   3.3. [Advanced Cryptographic Workflows](#33-advanced-cryptographic-workflows)
-----
+   3.3. [Advanced Cryptographic Workflows](#33-advanced-cryptographic-workflows)  
+
+---
+
 4. [Key Modules and Functions](#key-modules-and-functions)  
- 
-   4.1. [Key Generation Engine](#31-key-generation-engine)  
-   4.2. [Validation and Conversion](#32-validation-and-conversion)  
-   4.3. [Security Analysis Module](#33-security-analysis-module)  
-   4.4. [Real-Time Monitoring & Logging](#34-real-time-monitoring--logging)  
-   4.5. [Optimization and Precomputation Layer](#35-optimization-and-precomputation-layer)  
-   4.6. [Future Integrations and Enhancements](#36-future-integrations-and-enhancements)  
+   4.1. [Key Generation Engine](#41-key-generation-engine)  
+   4.2. [Validation and Conversion](#42-validation-and-conversion)  
+   4.3. [Security Analysis Module](#43-security-analysis-module)  
+   4.4. [Real-Time Monitoring & Logging](#44-real-time-monitoring--logging)  
+   4.5. [Optimization and Precomputation Layer](#45-optimization-and-precomputation-layer)  
+   4.6. [Future Integrations and Enhancements](#46-future-integrations-and-enhancements)  
+
 ---
+
 5. [BIP‑38 and Secure Key Encryption](#bip38-and-secure-key-encryption)  
+   5.1. [Encryption and Decryption Processes](#51-encryption-and-decryption-processes)  
+   5.2. [Compatibility and Practical Impact](#52-compatibility-and-practical-impact)  
+   5.3. [Case Studies and Implementation Examples](#53-case-studies-and-implementation-examples)  
 
-   5.1. [Encryption and Decryption Processes](#41-encryption-and-decryption-processes)  
-   5.2. [Compatibility and Practical Impact](#42-compatibility-and-practical-impact)  
-   5.3. [Case Studies and Implementation Examples](#43-case-studies-and-implementation-examples)  
 ---
+
 6. [Detailed Key Generation Process & Understanding Mini Key Strength](#detailed-key-generation-process--understanding-mini-key-strength)  
- 
-   6.1. [Generating Random Inputs and Formatting Checks](#51-generating-random-inputs-and-formatting-checks)  
-   6.2. [Hashing and Conversion to Wallet Import Format](#52-hashing-and-conversion-to-wallet-import-format)  
-   6.3. [Performance and Operation Count Analysis](#53-performance-and-operation-count-analysis)  
-   6.4. [Bit Length and Keyspace](#54-bit-length-and-keyspace)  
-   6.5. [Base‑62 Encoding and Exponential Growth](#55-base-62-encoding-and-exponential-growth)  
-   6.6. [Security Implications](#56-security-implications)  
----
-7. [LOL BRUH Theory – Operation Optimization in Massive Keyspaces](#7-deep-dive-2248–2252-and-operation-optimization-lol-bruh-overview)  
+   6.1. [Generating Random Inputs and Formatting Checks](#61-generating-random-inputs-and-formatting-checks)  
+   6.2. [Hashing and Conversion to Wallet Import Format](#62-hashing-and-conversion-to-wallet-import-format)  
+   6.3. [Performance and Operation Count Analysis](#63-performance-and-operation-count-analysis)  
+   6.4. [Bit Length and Keyspace](#64-bit-length-and-keyspace)  
+   6.5. [Base‑62 Encoding and Exponential Growth](#65-base-62-encoding-and-exponential-growth)  
+   6.6. [Security Implications](#66-security-implications)  
 
-   7.1 [Understanding the Range: 2²⁴⁸ – 2²⁵²](#71-understanding-the-range-2248–2252)  
-   7.2 [Operation Breakdown and Cost Analysis](#72-the-operation-count-step-by-step-analysis)  
-   7.2.1 [Step-by-Step Operation Mapping](#detailed-operation-breakdown)  
-   
-   7.3 [Optimization and the “LOL BRUH” Analogy](#optimization-by-skipping-redundant-steps)  
-   7.3.1 [Redundant Operations and What Gets Skipped](#)  
-   7.3.2 [36% Efficiency Gain Explained](#the-lol-bruh-analogy)  
-   7.3.3 [Assembly Line Analogy for Cryptography](#)  
-   
-   7.4 [Case Study: Casascius Mini Key with Flow and Analytics](#74-case-study-casascius-mini-key-with-flow-and-analytics)  
-   7.4.1 [Real Example of Mini Key to Address](#741-real-example-of-mini-key-to-address)  
-   7.4.2 [Flowchart: From Generation to Address](#742-flowchart-from-generation-to-address)  
-   7.4.3 [Checksums, Leading Zeros, and Validity](#743-checksums-leading-zeros-and-validity)  
-   7.4.4 [Visualizing the Optimization Path](#744-visualizing-the-optimization-path)  
-   
-   7.5 [Final Thoughts on the LOL BRUH Theory](#75-final-thoughts-on-the-lol-bruh-theory)  
-   7.5.1 [Summary of Key Insights](#751-summary-of-key-insights)  
-   7.5.2 [Implications for Future Cryptographic Optimization](#752-implications-for-future-cryptographic-optimization)
 ---
-8. [Introduction: Defining Casacious MiniKeys](#what-are-casacious-minikeys)    
- 
-   8.1. [What Are Casacious MiniKeys?](#what-are-casacious-minikeys)  
-   8.2. [Historical Background and Motivation](#historical-background-and-motivation)  
-   8.3. [Links to Casascius Physical Bitcoins](#links-to-casascius-physical-bitcoins)  
+
+7. [LOL BRUH Theory – Operation Optimization in Massive Keyspaces](#7-lol-bruh-theory--operation-optimization-in-massive-keyspaces)  
+   7.1. [Understanding the Range: 2²⁴⁸ – 2²⁵²](#71-understanding-the-range-2248--2252)  
+   7.2. [Operation Breakdown and Cost Analysis](#72-the-operation-count-step-by-step-analysis)  
+      7.2.1. [Step-by-Step Operation Mapping](#721-detailed-operation-breakdown)  
+   7.3. [Optimization and the “LOL BRUH” Analogy](#73-optimization-by-skipping-redundant-steps)  
+      7.3.1. [Redundant Operations and What Gets Skipped](#731-redundant-operations-and-what-gets-skipped)  
+      7.3.2. [36% Efficiency Gain Explained](#732-the-lol-bruh-analogy)  
+      7.3.3. [Assembly Line Analogy for Cryptography](#733-assembly-line-analogy-for-cryptography)  
+   7.4. [Case Study: Casascius Mini Key with Flow and Analytics](#74-case-study-casascius-mini-key-with-flow-and-analytics)  
+      7.4.1. [Real Example of Mini Key to Address](#741-real-example-of-mini-key-to-address)  
+      7.4.2. [Flowchart: From Generation to Address](#742-flowchart-from-generation-to-address)  
+      7.4.3. [Checksums, Leading Zeros, and Validity](#743-checksums-leading-zeros-and-validity)  
+      7.4.4. [Visualizing the Optimization Path](#744-visualizing-the-optimization-path)  
+   7.5. [Final Thoughts on the LOL BRUH Theory](#75-final-thoughts-on-the-lol-bruh-theory)  
+      7.5.1. [Summary of Key Insights](#751-summary-of-key-insights)  
+      7.5.2. [Implications for Future Cryptographic Optimization](#752-implications-for-future-cryptographic-optimization)  
+
 ---
-9. [How They Work](#the-cryptographic-workflow)
-    
-    9.1. [The Cryptographic Workflow](#the-cryptographic-workflow)  
-    9.2. [Step-by-Step Process: Entropy, Generation, Checksum](#step-by-step-process)  
-    9.3. [Integration with BIP‑0038](#integration-with-bip-0038)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [BIP‑0038 Overview](#bip-0038-overview)  
-    &nbsp;&nbsp;&nbsp;&nbsp;- [BIP38 Documentation and Detailed Reference](#bip38-documentation-and-detailed-reference)
+
+8. [Introduction: Defining Casacious MiniKeys](#8-what-are-casacious-minikeys)  
+   8.1. [What Are Casacious MiniKeys?](#81-what-are-casacious-minikeys)  
+   8.2. [Historical Background and Motivation](#82-historical-background-and-motivation)  
+   8.3. [Links to Casascius Physical Bitcoins](#83-links-to-casascius-physical-bitcoins)  
+
 ---
-10. [Historical Timeline: When It All Began](#the-early-days-of-physical-bitcoin) 
-  
-    10.1. [The Early Days of Physical Bitcoin](#the-early-days-of-physical-bitcoin)  
-    10.2. [Evolution of the Mini Private Key Format](#evolution-of-the-mini-private-key-format)  
-    10.3. [Milestones and Community Innovations](#milestones-and-community-innovations)
+
+9. [How They Work](#9-the-cryptographic-workflow)  
+   9.1. [The Cryptographic Workflow](#91-the-cryptographic-workflow)  
+   9.2. [Step-by-Step Process: Entropy, Generation, Checksum](#92-step-by-step-process)  
+   9.3. [Integration with BIP‑0038](#93-integration-with-bip-0038)  
+      - [BIP‑0038 Overview](#931-bip-0038-overview)  
+      - [BIP38 Documentation and Detailed Reference](#932-bip38-documentation-and-detailed-reference)  
+
 ---
-11. [A Detailed Walkthrough of the Process](#overview-of-the-process-and-output-example)
-  
-    11.1. [Overview of the Process and Output Example](#overview-of-the-process-and-output-example)  
-    11.2. [Checksum Verification and Cryptographic Integrity](#checksum-verification-and-cryptographic-integrity)  
-    11.3. [Key Generation: From Private Key to Public Addresses](#key-generation-from-private-key-to-public-addresses)
+
+10. [Historical Timeline: When It All Began](#10-the-early-days-of-physical-bitcoin)  
+    10.1. [The Early Days of Physical Bitcoin](#101-the-early-days-of-physical-bitcoin)  
+    10.2. [Evolution of the Mini Private Key Format](#102-evolution-of-the-mini-private-key-format)  
+    10.3. [Milestones and Community Innovations](#103-milestones-and-community-innovations)  
+
 ---
-12. [Legacy, Current Status, and Future Directions](#-12-Legacy-Current-Status-and-Future-Directions)
+
+11. [A Detailed Walkthrough of the Process](#11-overview-of-the-process-and-output-example)  
+    11.1. [Overview of the Process and Output Example](#111-overview-of-the-process-and-output-example)  
+    11.2. [Checksum Verification and Cryptographic Integrity](#112-checksum-verification-and-cryptographic-integrity)  
+    11.3. [Key Generation: From Private Key to Public Addresses](#113-key-generation-from-private-key-to-public-addresses)  
+
 ---
-13. Monitoring Current Data of Casa
-    13.1. Live Data Integration Techniques  
-    13.2. Real-Time Key Utilization and Performance Metrics  
-    13.3. Proposed Dashboard and Reporting Mechanisms
+
+12. [Legacy, Current Status, and Future Directions](#12-legacy-current-status-and-future-directions)  
+
 ---
-14. Underlying Algorithms: Which Was Algo?
-  - 14.1. Cryptographic Primitives  
-  - 14.2. Random Number Generation and CSPRNGs  
-  - 14.3. Base‑58/62 Encoding Techniques  
-  - 14.4. Pseudocode Examples and Security Analysis  
+
+13. [Monitoring Current Data of Casa](#13-monitoring-current-data-of-casa)  
+    13.1. [Live Data Integration Techniques](#131-live-data-integration-techniques)  
+    13.2. [Real-Time Key Utilization and Performance Metrics](#132-real-time-key-utilization-and-performance-metrics)  
+    13.3. [Proposed Dashboard and Reporting Mechanisms](#133-proposed-dashboard-and-reporting-mechanisms)  
+
 ---
-15. Exploitation & Vulnerability Analysis**  
-  - 15.1. Identifying Weaknesses in Short Key Formats  
-  - 15.2. Brute-Force Attack Vectors  
-  - 15.3. Mitigation Strategies and Best Practices  
-  - 15.4. Ethical and Legal Considerations  
+
+14. [Underlying Algorithms: Which Was Algo?](#14-underlying-algorithms-which-was-algo)  
+    14.1. [Cryptographic Primitives](#141-cryptographic-primitives)  
+    14.2. [Random Number Generation and CSPRNGs](#142-random-number-generation-and-csprngs)  
+    14.3. [Base‑58/62 Encoding Techniques](#143-base-5862-encoding-techniques)  
+    14.4. [Pseudocode Examples and Security Analysis](#144-pseudocode-examples-and-security-analysis)  
+
 ---
-16. Bit-Level Differences: 23, 23, 26, 30 Explained
-    16.1. Mathematical Derivations of Keyspace  
-    16.2. Comparison of 22/23/26/30-bit Keys  
-    16.3. Impact on Brute-Force Resistance and Security
+
+15. [Exploitation & Vulnerability Analysis](#15-exploitation--vulnerability-analysis)  
+    15.1. [Identifying Weaknesses in Short Key Formats](#151-identifying-weaknesses-in-short-key-formats)  
+    15.2. [Brute-Force Attack Vectors](#152-brute-force-attack-vectors)  
+    15.3. [Mitigation Strategies and Best Practices](#153-mitigation-strategies-and-best-practices)  
+    15.4. [Ethical and Legal Considerations](#154-ethical-and-legal-considerations)  
+
 ---
-17. Key Sizes & Format Variations
-    17.1. Overview of Physical vs. Digital Key Formats  
-    17.2. Encoding, Checksum, and Conversion Methods  
-    17.3. Diagrammatic Representations of Key Structure
+
+16. [Bit-Level Differences: 23, 23, 26, 30 Explained](#16-bit-level-differences-23-23-26-30-explained)  
+    16.1. [Mathematical Derivations of Keyspace](#161-mathematical-derivations-of-keyspace)  
+    16.2. [Comparison of 22/23/26/30-bit Keys](#162-comparison-of-22232630-bit-keys)  
+    16.3. [Impact on Brute-Force Resistance and Security](#163-impact-on-brute-force-resistance-and-security)  
+
 ---
-18. Probability & Chance Calculations
-    18.1. Statistical Models for Key Generation  
-    18.2. Monte Carlo Simulations and Key Collision Analysis  
-    18.3. Impact of Randomness and Entropy on Security
+
+17. [Key Sizes & Format Variations](#17-key-sizes--format-variations)  
+    17.1. [Overview of Physical vs. Digital Key Formats](#171-overview-of-physical-vs-digital-key-formats)  
+    17.2. [Encoding, Checksum, and Conversion Methods](#172-encoding-checksum-and-conversion-methods)  
+    17.3. [Diagrammatic Representations of Key Structure](#173-diagrammatic-representations-of-key-structure)  
+
 ---
- 19. Different Theories in Key Generation  
-  - 19.1 Deterministic vs. Probabilistic Approaches  
-    - 19.1.1 Core Goals: Unpredictability & Recoverability  
-    - 19.1.2 Deterministic Schemes  
-      - A. Key Derivation Functions (KDFs)  
-      - B. Hierarchical Deterministic (HD) Wallets  
-      - C. RFC 6979 (Deterministic ECDSA Nonces)  
-    - 19.1.3 Probabilistic Schemes  
-      - A. True Random Number Generators (TRNGs)  
-      - B. OS‑Provided Entropy (e.g. /dev/random)  
-      - C. Hardware RNGs (e.g. Intel RDRAND)  
-    - 19.1.4 Trade‑off Summary  
-  - 19.2 Comparative Analysis of Algorithmic Models  
-    - 19.2.1 Security Assumptions  
-      - A. Blum Blum Shub  
-      - B. NIST DRBGs (Hash_DRBG, HMAC_DRBG, CTR_DRBG)  
-      - C. Yarrow & Fortuna  
-    - 19.2.2 Performance & Throughput  
-    - 19.2.3 Failure Modes & Reseeding  
-    - 19.2.4 Implementation Complexity & Compliance
+
+18. [Probability & Chance Calculations](#18-probability--chance-calculations)  
+    18.1. [Statistical Models for Key Generation](#181-statistical-models-for-key-generation)  
+    18.2. [Monte Carlo Simulations and Key Collision Analysis](#182-monte-carlo-simulations-and-key-collision-analysis)  
+    18.3. [Impact of Randomness and Entropy on Security](#183-impact-of-randomness-and-entropy-on-security)  
+
 ---
-- 20. Casa Coin Keyhunt & Brute‑Force Strategies  
-  - 20.1 Overview of Brute‑Force Methodologies  
-    - 20.1.1 Targeted Key‑Space Reduction  
-    - 20.1.2 Discrete Logarithm via Pollard’s Rho & Kangaroo  
-    - 20.1.3 Lattice‑Based Partial‑Nonce Recovery  
-  - 20.2 Optimized Search Algorithms  
-    - 20.2.1 Branch‑and‑Prune Tree Search  
-    - 20.2.2 SIMD/GPU‑Accelerated Scalar Multiplication  
-    - 20.2.3 FPGA/ASIC Off‑Loading  
-  - 20.3 Case Studies and Practical Test Results  
-    - 20.3.1 Biased‑RNG Enumeration on a Faulty TRNG Module  
-    - 20.3.2 Pollard’s Rho on Truncated Nonce Leakage  
-    - 20.3.3 FPGA‑Accelerated Lattice Sieving for Partial‑Nonce Attack  
-  - 20.4 Legal, Ethical, and Security Implications  
-    - 20.4.1 Legality & Regulatory Frameworks  
-    - 20.4.2 Ethical Disclosure Practices  
-    - 20.4.3 Mitigations & Defensive Best Practices
+
+19. [Different Theories in Key Generation](#19-different-theories-in-key-generation)  
+    19.1. [Deterministic vs. Probabilistic Approaches](#191-deterministic-vs-probabilistic-approaches)  
+        19.1.1. [Core Goals: Unpredictability & Recoverability](#1911-core-goals-unpredictability--recoverability)  
+        19.1.2. [Deterministic Schemes](#1912-deterministic-schemes)  
+            - [A. Key Derivation Functions (KDFs)](#1912a-key-derivation-functions-kdfs)  
+            - [B. Hierarchical Deterministic (HD) Wallets](#1912b-hierarchical-deterministic-hd-wallets)  
+            - [C. RFC 6979 (Deterministic ECDSA Nonces)](#1912c-rfc-6979-deterministic-ecdsa-nonces)  
+        19.1.3. [Probabilistic Schemes](#1913-probabilistic-schemes)  
+            - [A. True Random Number Generators (TRNGs)](#1913a-true-random-number-generators-trngs)  
+            - [B. OS‑Provided Entropy (e.g. /dev/random)](#1913b-os-provided-entropy-eg-devrandom)  
+            - [C. Hardware RNGs (e.g. Intel RDRAND)](#1913c-hardware-rngs-eg-intel-rdrand)  
+        19.1.4. [Trade‑off Summary](#1914-trade-off-summary)  
+    19.2. [Comparative Analysis of Algorithmic Models](#192-comparative-analysis-of-algorithmic-models)  
+        19.2.1. [Security Assumptions](#1921-security-assumptions)  
+            - [A. Blum Blum Shub](#1921a-blum-blum-shub)  
+            - [B. NIST DRBGs (Hash_DRBG, HMAC_DRBG, CTR_DRBG)](#1921b-nist-drbgs-hash_drbg-hmac_drbg-ctr_drbg)  
+            - [C. Yarrow & Fortuna](#1921c-yarrow--fortuna)  
+        19.2.2. [Performance & Throughput](#1922-performance--throughput)  
+        19.2.3. [Failure Modes & Reseeding](#1923-failure-modes--reseedin)  
+        19.2.4. [Implementation Complexity & Compliance](#1924-implementation-complexity--compliance)  
+
 ---
-- [21. Casa by Shub and AlbertoBSD: Vision and Legacy](#21-casa-by-shub-and-albertobsd-vision-and-legacy)  
-  - [21.1 Developer Background and Contributions](#21-1-developer-background-and-contributions)  
-    - [21.1.1 AlbertoBSD](#21-11-albertobsd)  
-    - [21.1.2 Shub Saini](#21-12-shub-saini)  
-  - [21.2 Impact on the Cryptographic Community](#21-2-impact-on-the-cryptographic-community)  
-    - [21.2.1 Puzzle-Solving & Research](#21-21-puzzle-solving--research)  
-    - [21.2.2 Educational Value](#21-22-educational-value)  
-    - [21.2.3 Open-Source Collaboration](#21-23-open-source-collaboration)  
-    - [21.2.4 Security Awareness](#21-24-security-awareness)  
-  - [21.3 Future Legacy and Continuing Innovation](#21-3-future-legacy-and-continuing-innovation)  
-    - [21.3.1 Feature Convergence](#21-31-feature-convergence)  
-    - [21.3.2 Security-Hardened Releases](#21-32-security-hardened-releases)  
-    - [21.3.3 Cloud-Native & Web Interfaces](#21-33-cloud-native--web-interfaces)  
-    - [21.3.4 Educational Toolkits](#21-34-educational-toolkits)  
-  - [21.4 Repository Overviews, Commands, and Workflows](#21-4-repository-overviews-commands-and-workflows)  
-    - [21.4.1 minikeyg](#21-41-minikeyg)  
-    - [21.4.2 keyhunt (minikeys mode)](#21-42-keyhunt-minikeys-mode)  
-    - [21.4.3 casa (Shub’s custom build)](#21-43-casa-shubs-custom-build)  
-    - [21.4.4 Other “casa” Projects](#21-44-other-casa-projects)  
-  - [21.5 Comparative Summary: Which to Use When?](#21-5-comparative-summary-which-to-use-when)  
+
+20. [Casa Coin Keyhunt & Brute‑Force Strategies](#20-casa-coin-keyhunt--brute-force-strategies)  
+    20.1. [Overview of Brute‑Force Methodologies](#201-overview-of-brute-force-methodologies)  
+        20.1.1. [Targeted Key‑Space Reduction](#2011-targeted-key-space-reduction)  
+        20.1.2. [Discrete Logarithm via Pollard’s Rho & Kangaroo](#2012-discrete-logarithm-via-pollards-rho--kangaroo)  
+        20.1.3. [Lattice‑Based Partial‑Nonce Recovery](#2013-lattice-based-partial-nonce-recovery)  
+    20.2. [Optimized Search Algorithms](#202-optimized-search-algorithms)  
+        20.2.1. [Branch‑and‑Prune Tree Search](#2021-branch-and-prune-tree-search)  
+        20.2.2. [SIMD/GPU‑Accelerated Scalar Multiplication](#2022-simdgpu-accelerated-scalar-multiplication)  
+        20.2.3. [FPGA/ASIC Off‑Loading](#2023-fpgaasic-off-loading)  
+    20.3. [Case Studies and Practical Test Results](#203-case-studies-and-practical-test-results)  
+        20.3.1. [Biased‑RNG Enumeration on a Faulty TRNG Module](#2031-biased-rng-enumeration-on-a-faulty-trng-module)  
+        20.3.2. [Pollard’s Rho on Truncated Nonce Leakage](#2032-pollards-rho-on-truncated-nonce-leakage)  
+        20.3.3. [FPGA‑Accelerated Lattice Sieving for Partial‑Nonce Attack](#2033-fpga-accelerated-lattice-sieving-for-partial-nonce-attack)  
+    20.4. [Legal, Ethical, and Security Implications](#204-legal-ethical-and-security-implications)  
+        20.4.1. [Legality & Regulatory Frameworks](#2041-legality--regulatory-frameworks)  
+        20.4.2. [Ethical Disclosure Practices](#2042-ethical-disclosure-practices)  
+        20.4.3. [Mitigations & Defensive Best Practices](#2043-mitigations--defensive-best-practices)  
+
 ---
-- [22. Conclusion](#22-conclusion)  
-  - [22.1 Summary of Key Points](#221-summary-of-key-points)  
-  - [22.2 Invitation to Contribute and Collaborate](#222-invitation-to-contribute-and-collaborate)  
-  - [22.3 Future Vision for Casamylove](#223-future-vision-for-casamylove)  
-- [23. Licensing & Contributions](#23-licensing--contributions)  
-  - [23.1 Licensing Terms](#231-licensing-terms)  
-  - [23.2 Contribution Guidelines](#232-contribution-guidelines)  
-  - [23.3 Code of Conduct and Community Standards](#233-code-of-conduct-and-community-standards)  
-- [Resources](#resources)
+
+21. [Casa by Shub and AlbertoBSD: Vision and Legacy](#21-casa-by-shub-and-albertobsd-vision-and-legacy)  
+    21.1. [Developer Background and Contributions](#211-developer-background-and-contributions)  
+        21.1.1. [AlbertoBSD](#2111-albertobsd)  
+        21.1.2. [Shub Saini](#2112-shub-saini)  
+    21.2. [Impact on the Cryptographic Community](#212-impact-on-the-cryptographic-community)  
+        21.2.1. [Puzzle-Solving & Research](#2121-puzzle-solving--research)  
+        21.2.2. [Educational Value](#2122-educational-value)  
+        21.2.3. [Open-Source Collaboration](#2123-open-source-collaboration)  
+        21.2.4. [Security Awareness](#2124-security-awareness)  
+    21.3. [Future Legacy and Continuing Innovation](#213-future-legacy-and-continuing-innovation)  
+        21.3.1. [Feature Convergence](#2131-feature-convergence)  
+        21.3.2. [Security-Hardened Releases](#2132-security-hardened-releases)  
+        21.3.3. [Cloud-Native & Web Interfaces](#2133-cloud-native--web-interfaces)  
+        21.3.4. [Educational Toolkits](#2134-educational-toolkits)  
+    21.4. [Repository Overviews, Commands, and Workflows](#214-repository-overviews-commands-and-workflows)  
+        21.4.1. [minikeyg](#2141-minikeyg)  
+        21.4.2. [keyhunt (minikeys mode)](#2142-keyhunt-minikeys-mode)  
+        21.4.3. [casa (Shub’s custom build)](#2143-casa-shubs-custom-build)  
+        21.4.4. [Other “casa” Projects](#2144-other-casa-projects)  
+    21.5. [Comparative Summary: Which to Use When?](#215-comparative-summary-which-to-use-when)  
+
+---
+
+22. [Conclusion](#22-conclusion)  
+    22.1. [Summary of Key Points](#221-summary-of-key-points)  
+    22.2. [Invitation to Contribute and Collaborate](#222-invitation-to-contribute-and-collaborate)  
+    22.3. [Future Vision for Casamylove](#223-future-vision-for-casamylove)  
+
+---
+
+23. [Licensing & Contributions](#23-licensing--contributions)  
+    23.1. [Licensing Terms](#231-licensing-terms)  
+    23.2. [Contribution Guidelines](#232-contribution-guidelines)  
+    23.3. [Code of Conduct and Community Standards](#233-code-of-conduct-and-community-standards)  
+
+---
+
+- [Resources](#resources)  
+
 
 
 ---
