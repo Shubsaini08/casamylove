@@ -190,10 +190,20 @@
     - [21.4.3 casa (Shub’s custom build)](#21-43-casa-shubs-custom-build)  
     - [21.4.4 Other “casa” Projects](#21-44-other-casa-projects)  
   - [21.5 Comparative Summary: Which to Use When?](#21-5-comparative-summary-which-to-use-when)  
+---
+- [22. Conclusion](#22-conclusion)  
+  - [22.1 Summary of Key Points](#221-summary-of-key-points)  
+  - [22.2 Invitation to Contribute and Collaborate](#222-invitation-to-contribute-and-collaborate)  
+  - [22.3 Future Vision for Casamylove](#223-future-vision-for-casamylove)  
+- [23. Licensing & Contributions](#23-licensing--contributions)  
+  - [23.1 Licensing Terms](#231-licensing-terms)  
+  - [23.2 Contribution Guidelines](#232-contribution-guidelines)  
+  - [23.3 Code of Conduct and Community Standards](#233-code-of-conduct-and-community-standards)  
+- [Resources](#resources)
+
 
 ---
 
----
 ## 1. Introduction and Background
 
 The technology behind physical bitcoins—most notably popularized by Casascius—is a fascinating blend of cryptography, randomness, and physical artifact design. The innovation lies in embedding a digital private key (or its miniaturized version) on a tangible object, such as a coin, that later proves its value on the blockchain.
