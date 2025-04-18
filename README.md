@@ -150,7 +150,48 @@
     - 19.2.3 Failure Modes & Reseeding  
     - 19.2.4 Implementation Complexity & Compliance
 ---
+- 20. Casa Coin Keyhunt & Brute‑Force Strategies  
+  - 20.1 Overview of Brute‑Force Methodologies  
+    - 20.1.1 Targeted Key‑Space Reduction  
+    - 20.1.2 Discrete Logarithm via Pollard’s Rho & Kangaroo  
+    - 20.1.3 Lattice‑Based Partial‑Nonce Recovery  
+  - 20.2 Optimized Search Algorithms  
+    - 20.2.1 Branch‑and‑Prune Tree Search  
+    - 20.2.2 SIMD/GPU‑Accelerated Scalar Multiplication  
+    - 20.2.3 FPGA/ASIC Off‑Loading  
+  - 20.3 Case Studies and Practical Test Results  
+    - 20.3.1 Biased‑RNG Enumeration on a Faulty TRNG Module  
+    - 20.3.2 Pollard’s Rho on Truncated Nonce Leakage  
+    - 20.3.3 FPGA‑Accelerated Lattice Sieving for Partial‑Nonce Attack  
+  - 20.4 Legal, Ethical, and Security Implications  
+    - 20.4.1 Legality & Regulatory Frameworks  
+    - 20.4.2 Ethical Disclosure Practices  
+    - 20.4.3 Mitigations & Defensive Best Practices
+---
+- [21. Casa by Shub and AlbertoBSD: Vision and Legacy](#21-casa-by-shub-and-albertobsd-vision-and-legacy)  
+  - [21.1 Developer Background and Contributions](#21-1-developer-background-and-contributions)  
+    - [21.1.1 AlbertoBSD](#21-11-albertobsd)  
+    - [21.1.2 Shub Saini](#21-12-shub-saini)  
+  - [21.2 Impact on the Cryptographic Community](#21-2-impact-on-the-cryptographic-community)  
+    - [21.2.1 Puzzle-Solving & Research](#21-21-puzzle-solving--research)  
+    - [21.2.2 Educational Value](#21-22-educational-value)  
+    - [21.2.3 Open-Source Collaboration](#21-23-open-source-collaboration)  
+    - [21.2.4 Security Awareness](#21-24-security-awareness)  
+  - [21.3 Future Legacy and Continuing Innovation](#21-3-future-legacy-and-continuing-innovation)  
+    - [21.3.1 Feature Convergence](#21-31-feature-convergence)  
+    - [21.3.2 Security-Hardened Releases](#21-32-security-hardened-releases)  
+    - [21.3.3 Cloud-Native & Web Interfaces](#21-33-cloud-native--web-interfaces)  
+    - [21.3.4 Educational Toolkits](#21-34-educational-toolkits)  
+  - [21.4 Repository Overviews, Commands, and Workflows](#21-4-repository-overviews-commands-and-workflows)  
+    - [21.4.1 minikeyg](#21-41-minikeyg)  
+    - [21.4.2 keyhunt (minikeys mode)](#21-42-keyhunt-minikeys-mode)  
+    - [21.4.3 casa (Shub’s custom build)](#21-43-casa-shubs-custom-build)  
+    - [21.4.4 Other “casa” Projects](#21-44-other-casa-projects)  
+  - [21.5 Comparative Summary: Which to Use When?](#21-5-comparative-summary-which-to-use-when)  
 
+---
+
+---
 ## 1. Introduction and Background
 
 The technology behind physical bitcoins—most notably popularized by Casascius—is a fascinating blend of cryptography, randomness, and physical artifact design. The innovation lies in embedding a digital private key (or its miniaturized version) on a tangible object, such as a coin, that later proves its value on the blockchain.
@@ -1865,6 +1906,184 @@ By integrating these defenses, a Casa‑style wallet can close off the high‑pr
 
 ---
 
+## 21.1 Developer Background and Contributions
+
+This section dives into three flagship tools—**minikeyg**, **keyhunt**, and **casa**—that power the Casa ecosystem. We’ll explore their authors’ backgrounds, architectural innovations, community impact, and future trajectories.  
+> **High‑Probability “Hit” Recommendation:**  
+> Among **minikeyg**, **keyhunt**, and **casa**, **keyhunt**’s **minikeys** mode (the only one directly applicable to Casascius-style keys) offers the best hit rate when GPU‑accelerated.  
+
+
+### 21.1.1 AlbertoBSD
+
+- **GitHub:** [albertobsd](https://github.com/albertobsd)  
+- **Focus:** High-performance, puzzle-solving tools for secp256k1.  
+- **Key Repos:**
+  - **minikeyg**: Fast C++ mini‑key generator (Casascius‑style).  
+  - **keyhunt**: Private‑key hunter; **minikeys** mode leverages GPU bloom filters.
+
+### 21.1.2 Shub Saini
+
+- **GitHub:** [Shubsaini08](https://github.com/Shubsaini08)  
+- **Focus:** Robust Casascius mini‑key toolchain.  
+- **Key Repo:**
+  - **casa**: C++11 generator/validator with resume, logging, bloom matching; +30% throughput patch.
+
+---
+
+## 21.2 Impact on the Cryptographic Community
+
+### 21.2.1 Puzzle-Solving & Research
+
+- **Satoshi Quest** uses these tools to hunt tiny keyspaces.  
+- Enables studies on BIP‑39 and mini‑key collision distributions.
+
+### 21.2.2 Educational Value
+
+- Clear codebases for:
+  - Mini‑key checksum mechanics  
+  - Bloom filters in key matching  
+  - Threaded generation patterns
+
+### 21.2.3 Open-Source Collaboration
+
+| Repo      | ⭐ Stars | Forks |
+|-----------|---------|-------|
+| keyhunt   | 808     | 536   |
+| minikeyg  | 12      | 8     |
+| casa      | 3       | 1     |
+
+### 21.2.4 Security Awareness
+
+- Demonstrates that even 2¹³⁷‑space mini‑keys require real entropy.  
+- Drives adoption of TRNG health checks and RFC 6979 for nonces.
+
+---
+
+## 21.3 Future Legacy and Continuing Innovation
+
+### 21.3.1 Feature Convergence
+
+- Keyhunt’s GPU kernels → minikeyg & casa extensions.  
+- Shared libs for mnemonic‑to‑mini‑key pipelines.
+
+### 21.3.2 Security-Hardened Releases
+
+- **Constant‑time ECC** integration.  
+- Native **RFC 6979** nonce support.
+
+### 21.3.3 Cloud-Native & Web Interfaces
+
+- Dockerized dashboards showing live bloom‑filter hit rates.  
+- WebSocket APIs for remote job control.
+
+### 21.3.4 Educational Toolkits
+
+- Jupyter labs on entropy testing, bloom filters, lattice methods.  
+- University cryptography course modules.
+
+---
+
+## 21.4 Repository Overviews, Commands, and Workflows
+
+### 21.4.1 minikeyg
+
+**Purpose:** Lightweight mini‑key generation.
+
+```bash
+git clone https://github.com/albertobsd/minikeyg.git
+cd minikeyg
+make
+# 22‑char, verified:
+./minikeyg
+# 30‑char, unverified, 4 threads:
+./minikeyg -u -s 30 -t 4
+```
+
+**Workflow:**  
+1. Parse CLI  
+2. Spawn N threads  
+3. RNG → Base58 encode  
+4. (Optional) Checksum verify  
+5. Output valid keys
+
+---
+
+### 21.4.2 keyhunt (minikeys mode)
+
+**Purpose:** GPU‑accelerated Casascius mini‑key hunter.
+
+```bash
+git clone https://github.com/albertobsd/keyhunt.git
+cd keyhunt
+make
+# minikeys:
+./keyhunt -m minikeys -f targets.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
+```
+
+**Workflow:**  
+1. Load target RIPEMD‑160 list  
+2. Build bloom filter  
+3. Launch GPU kernels  
+4. Enumerate base‑minikey + N  
+5. Verify checksum & bloom match  
+6. Log any hits
+
+---
+
+### 21.4.3 casa (Shub’s custom build)
+
+**Purpose:** Feature‑rich Casascius mini‑key CLI.
+
+```bash
+git clone https://github.com/Shubsaini08/casa.git
+cd casa
+# Custom optimized build:
+g++ -O3 -march=native main.cpp -std=c++17 -pthread -lssl -lcrypto -o casa
+# 8 threads, 30‑char, bloom filter, stats every 30s:
+./casa -t 8 -b 30 -f targets.txt -log -p 30
+# Derive details:
+./casa --derive S6c56bnXQiBjk9mqSYE7ykVQ7NzrRy
+```
+
+**Workflow:**  
+1. Parse args (`--derive` vs. hunt)  
+2. (derive) run BIP‑39/32 logic → exit  
+3. (hunt) load bloom filter → spawn threads  
+4. RNG/seq generate → checksum & RIPEMD‑160 → match?  
+5. Log hits & periodic stats → graceful shutdown
+
+---
+
+### 21.4.4 Other “casa” Projects
+
+1. **Casa.io “Casa Node”**  
+   - **Type:** Bitcoin multisig server (Node.js/React)  
+   - **Workflow:**  
+     1. Install via Docker  
+     2. Configure 2-of-3 hardware keyholders  
+     3. Serve web UI / API for transaction signing  
+
+2. **Casa Keymaster CLI**  
+   - **Type:** Python tool for Casa.io wallet management  
+   - **Workflow:**  
+     1. `pip install casa-keymaster`  
+     2. `casa login` → OAuth  
+     3. `casa create-key` / `casa sign`  
+
+These differ from Shub’s **casa** (mini‑key focus) by targeting custodial multisig and hardware‑assisted workflows.
+
+---
+
+## 21.5 Comparative Summary: Which to Use When?
+
+| Use Case                          | Recommended Tool           |
+|-----------------------------------|----------------------------|
+| **Ultra‑fast mini‑key brute force** | keyhunt (minikeys mode) |
+| **Feature‑rich validation & logging** | Shub’s casa            |
+| **Lightweight library integration**  | minikeyg                |
+| **Multisig key management (Casa.io)** | Casa Node / Keymaster  |
+
+Each tool fits a niche—from **keyhunt** for raw speed, to **casa** for robust CLI workflows, to **minikeyg** for embeddable generation, and external Casa.io projects for full custodial/multisig setups.  
 
 
 
